@@ -1,0 +1,10 @@
+body{
+    background-color: aqua;
+    display: inline-block;
+    p{
+        display: flex;
+        background-color: red;
+        text-align: center;
+        transform: translateX(20px);
+    }
+}

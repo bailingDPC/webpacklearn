@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>五星红旗</title>
+    <style>
+        body{
+            margin: 0;
+            background: rgb(40, 156, 156);
+        }
+        canvas{
+            display: block;
+            margin: 10px auto 0;
+            width: 960px;
+            height: 640px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<h1>您好</h1>
+    <canvas width="960" height="640">你的浏览器版本不支持，请升级你的浏览器</canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let canCon = canvas.getContext("2d");
+
+        // //参考线
+        // canCon.strokeStyle="black";
+        // canCon.beginPath();
+        // canCon.moveTo(0, 320);
+        // canCon.lineTo(960, 320);
+        // canCon.moveTo(480, 0);
+        // canCon.lineTo(480, 640);
+
+        // canCon.moveTo(160, 160);
+        // canCon.lineTo(320, 64);
+
+        // canCon.moveTo(160, 160);
+        // canCon.lineTo(384, 128);
+
+        // canCon.moveTo(160, 160);
+        // canCon.lineTo(384, 224);
+
+        // canCon.moveTo(160, 160);
+        // canCon.lineTo(320, 288);
+        // canCon.stroke();
+
+        // //480/15=32  320/10=32
+        // for(let i=0; i<10; i++){
+        //     for(let j=0; j<15; j++){
+        //         canCon.strokeStyle="lime";
+        //         canCon.beginPath();
+        //         canCon.moveTo(0, 32*i);
+        //         canCon.lineTo(480, 32*i);
+        //         canCon.moveTo(32*j, 0);
+        //         canCon.lineTo(32*j, 320);
+        //         canCon.stroke();
+        //     }
+        // }
+
+        //大五角星中心点:(32*5，32*5) 外接圆半径32*3
+        canCon.save();
+        canCon.fillStyle="yellow";
+        canCon.translate(160,160);
+        //绘制大的五角星
+        canCon.beginPath();
+        canCon.rotate(-Math.PI/2);
+        canCon.moveTo(96, 0);
+        for(let i=0;i<4;i++){
+            canCon.save();
+            canCon.rotate(2*Math.PI/360*144*(i+1));
+            canCon.lineTo(96,0);
+            canCon.restore();
+        }
+        canCon.closePath();
+        canCon.fill();
+        canCon.restore();
+        
+        //绘制小的五角星
+        //第一颗
+        canCon.save();
+        canCon.fillStyle="yellow";
+        canCon.translate(320,64);
+        canCon.rotate(Math.PI/180*23);
+        canCon.beginPath();
+        canCon.rotate(-Math.PI/2);
+        canCon.moveTo(32, 0);
+        for(let i=0;i<4;i++){
+            canCon.save();
+            canCon.rotate(2*Math.PI/360*144*(i+1));
+            canCon.lineTo(32,0);
+            canCon.restore();
+        }
+        canCon.closePath();
+        canCon.fill();
+        canCon.restore();
+
+        //第二颗
+        canCon.save();
+        canCon.fillStyle="yellow";
+        canCon.translate(384,128);
+        canCon.rotate(Math.PI/180*46);
+        canCon.beginPath();
+        canCon.rotate(-Math.PI/2);
+        canCon.moveTo(32, 0);
+        for(let i=0;i<4;i++){
+            canCon.save();
+            canCon.rotate(2*Math.PI/360*144*(i+1));
+            canCon.lineTo(32,0);
+            canCon.restore();
+        }
+        canCon.closePath();
+        canCon.fill();
+        canCon.restore();
+
+        //第三颗
+        canCon.save();
+        canCon.fillStyle="yellow";
+        canCon.translate(384,224);
+        canCon.rotate(Math.PI/180*70);
+        canCon.beginPath();
+        canCon.rotate(-Math.PI/2);
+        canCon.moveTo(32, 0);
+        for(let i=0;i<4;i++){
+            canCon.save();
+            canCon.rotate(2*Math.PI/360*144*(i+1));
+            canCon.lineTo(32,0);
+            canCon.restore();
+        }
+        canCon.closePath();
+        canCon.fill();
+        canCon.restore();
+
+        //第四颗
+        canCon.save();
+        canCon.fillStyle="yellow";
+        canCon.translate(320,288);
+        canCon.rotate(Math.PI/180*92.5);
+        canCon.beginPath();
+        canCon.rotate(-Math.PI/2);
+        canCon.moveTo(32, 0);
+        for(let i=0;i<4;i++){
+            canCon.save();
+            canCon.rotate(2*Math.PI/360*144*(i+1));
+            canCon.lineTo(32,0);
+            canCon.restore();
+        }
+        canCon.closePath();
+        canCon.fill();
+        canCon.restore();
+    </script>
+    <!-- 
+        （1949年9月28日中国人民政治协商会议第一届全体会议主席团公布）
+        国旗的形状、颜色两面相同，旗上五星两面相对。为便利计，本件仅以旗杆在左之一面为说明之标准。对于旗杆在右之一面，凡本件所称左均应改右，所称右均应改左。
+        （一）旗面为红色，长方形，其长与高为三与二之比，旗面左上方缀黄色五角星五颗。一星较大，其外接圆直径为旗高十分之三，居左；四星较小，其外接圆直径为旗高十分之一，环拱于大星之右。旗杆套为白色。
+        （二）五星之位置与画法如下：
+        （1）为便于确定五星之位置，先将旗面对分为四个相等的长方形，将左上方之长方形上下划为十等分，左右划为十五等分。
+        （2）大五角星的中心点，在该长方形上五下五、左五右十之处。其画法为：以此点为圆心，以三等分为半径作一圆。在此圆周上，定出五个等距离的点，其一点须位于圆之正上方。
+                然后将此五点中各相隔的两点相联，使各成一直线。此五直线所构成之外轮廓线，即为所需之大五角星。五角星之一个角尖正向国旗墨线图上方。
+        （3）四颗小五角星的中心点，
+            第一点在该长方形上二下八、左十右五之处，
+            第二点在上四下六、左十二右三之处，
+            第三点在上七下三、左十二右三之处，
+            第四点在上九下一、左十右五之处。
+
+            其画法为：以以上四点为圆心，各以一等分为半径，分别作四个圆。
+                    在每个圆上各定出五个等距离的点，其中均须各有一点位于大五角星中心点与以上四个圆心的各联结线上。
+                    然后用构成大五角星的同样方法，构成小五角星。此四颗小五角星均各有一个角尖正对大五角星的中心点。
+        （三）国旗之通用尺度定为如下五种，各界酌情选用：
+                （1）长288厘米，高192厘米。
+                （2）长240厘米，高160厘米。
+                （3）长192厘米，高128厘米。
+                （4）长144厘米，高96厘米。
+                （5）长96厘米，高64厘米。 
+    -->
+</body>
+</html>

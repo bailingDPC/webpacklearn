@@ -1,0 +1,12 @@
+@import "./baner.css";
+@import "./header.scss";
+@import "../font/iconfont.css";
+
+p{
+    display: flex;
+    background-color: blue;
+    text-align: center;
+}
+.newcon:nth-of-type(odd){
+    background-color: seashell;
+}
